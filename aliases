@@ -1,0 +1,132 @@
+# Shell aliases
+
+# Some good shorcuts
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias cd..='cd ..'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias l='ls -lhaFG'
+alias ll='ls -lhaF | less'
+alias lt='ls -lhatFG'
+alias llt='ls -lhatF | less'
+alias c='clear'
+alias e='exit'
+
+# cd's to frontmost window of Finder
+cdf () {
+  cd "`osascript -e 'tell application "Finder"' -e 'set myname to POSIX path of (target of window 1 as alias)' -e 'end tell' 2>/dev/null`"
+}
+
+# Things to long to type/remember
+alias realias='bbedit --wait ~/.aliases; source ~/.aliases'
+alias tx='/usr/bin/tar -xvzf'
+alias ca='cd ~ ; clear'
+alias topl='top -u -F -R -s 2'
+alias o='open'
+alias o.='open .'
+
+# Quick way to rebuild the Launch Services database and get rid
+# of duplicates in the Open With submenu.
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+alias netstati='netstat -f inet | bbedit --clean --view-top'
+alias netstatr='netstat -rn | bbedit --clean --view-top'
+alias lsofi='lsof -nPi | bbedit --clean --view-top'
+alias digl='dig @127.0.0.1'
+alias digx='dig -x'
+
+alias py='python'
+
+# BBEdit stuff
+alias edit='bbedit'
+alias bb.='bbedit .'
+alias bbp='bbedit --clean --view-top --pipe-title Temp.txt'
+alias bbd='bbedit --clean --view-top --pipe-title Diff.patch'
+
+# Git stuff
+alias g='git'
+alias gg='git grep -I --line-number --heading'
+alias ga='git add -u .'
+alias gaa='git add --all .'
+alias gci='git commit -a -m'
+alias gcm='git commit -m'
+alias gcam='git commit --amend -m'
+alias gst='git status -sb'
+alias gcp='git cherry-pick'
+alias gbr='git branch'
+alias gbra='git branch -a'
+alias gfo='git fetch origin'
+alias gfu='git fetch upstream'
+alias gp='git push'
+alias gpo='git push -u origin'
+alias gl='git pull'
+alias glu='git pull upstream'
+alias glnr='git pull --no-rebase'
+alias grm='git rebase origin/master'
+alias grum='git rebase upstream/master'
+alias glo='git log | bbedit --clean --view-top --pipe-title Log.txt'
+alias gmn='git merge --no-ff'
+alias gsl='git stash list'
+
+gde () {
+  git diff --patch-with-stat $1 | bbedit --clean --view-top --pipe-title Diff.patch
+}
+
+gdes () {
+  git diff --staged --patch-with-stat $1 | bbedit --clean --view-top --pipe-title Diff.patch
+}
+
+gsa () {
+  git stash apply stash@{$1}
+}
+
+gss () {
+  git stash save "$@"
+}
+
+gra () {
+  git remote add $2 git@github.com:$2/$1.git
+}
+
+# tig stuff
+alias t='tig'
+alias tst='tig status'
+
+# Git Drupal projects
+alias gr6='git rebase origin/6.x-1.x'
+alias gr62='git rebase origin/6.x-2.x'
+alias gr63='git rebase origin/6.x-3.x'
+alias gr7='git rebase origin/7.x-1.x'
+alias gr72='git rebase origin/7.x-2.x'
+alias gr73='git rebase origin/7.x-3.x'
+alias gr8='git rebase origin/8.x-1.x'
+alias gr82='git rebase origin/8.x-2.x'
+alias gr83='git rebase origin/8.x-3.x'
+
+# Git Sprint Rebase
+alias grs1='git rebase origin/sprint-1'
+alias grs2='git rebase origin/sprint-2'
+alias grs3='git rebase origin/sprint-3'
+alias grs4='git rebase origin/sprint-4'
+alias grs5='git rebase origin/sprint-5'
+alias grs6='git rebase origin/sprint-6'
+alias grs7='git rebase origin/sprint-7'
+alias grs8='git rebase origin/sprint-8'
+alias grs9='git rebase origin/sprint-9'
+alias grs10='git rebase origin/sprint-10'
+alias grs11='git rebase origin/sprint-11'
+alias grs12='git rebase origin/sprint-12'
+alias grs13='git rebase origin/sprint-13'
+alias grs14='git rebase origin/sprint-14'
+alias grs15='git rebase origin/sprint-15'
+alias grs16='git rebase origin/sprint-16'
+alias grs17='git rebase origin/sprint-17'
+alias grs18='git rebase origin/sprint-18'
+alias grs19='git rebase origin/sprint-19'
+alias grs20='git rebase origin/sprint-20'
