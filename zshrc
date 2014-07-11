@@ -4,7 +4,17 @@ load_aliases
 load_completion ~/.zshuery/completion
 load_correction
 
-prompts '[$(whoami)@local:$(COLLAPSED_DIR)$(virtualenv_info)]$(prompt_char) ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+# Load version control information.
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats "%{$fg[green]%}(%b)%{$reset_color%}"
+
+version_branch() {
+    vcs_info
+    [[ -n $vcs_info_msg_0_ ]] && echo $vcs_info_msg_0_
+}
+
+prompts '[$(whoami)@local:$(COLLAPSED_DIR)$(virtualenv_info)]$(version_branch)$(prompt_char) ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
 
 # History search
 HISTSIZE=50000
@@ -23,7 +33,7 @@ setopt NO_NOMATCH
 bindkey '^[[3~' delete-char
 
 if is_mac; then
-    export EDITOR='bbedit'
+    export EDITOR='bbedit --wait --resume'
 else
     export EDITOR='vim'
 fi
@@ -32,6 +42,7 @@ chpwd() {
     update_terminal_cwd
 }
 
+# Limit git completion.
 zstyle ':completion:*:*' ignored-patterns '*_HEAD'
 
 __git_files () {

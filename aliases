@@ -35,9 +35,9 @@ alias o.='open .'
 # of duplicates in the Open With submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
-alias netstati='netstat -f inet | bbedit --clean --view-top'
-alias netstatr='netstat -rn | bbedit --clean --view-top'
-alias lsofi='lsof -nPi | bbedit --clean --view-top'
+alias netstati='netstat -f inet | bbedit --clean --view-top --resume'
+alias netstatr='netstat -rn | bbedit --clean --view-top --resume'
+alias lsofi='lsof -nPi | bbedit --clean --view-top --resume'
 alias digl='dig @127.0.0.1'
 alias digx='dig -x'
 
@@ -46,8 +46,8 @@ alias py='python'
 # BBEdit stuff
 alias edit='bbedit'
 alias bb.='bbedit .'
-alias bbp='bbedit --clean --view-top --pipe-title Temp.txt'
-alias bbd='bbedit --clean --view-top --pipe-title Diff.patch'
+alias bbp='bbedit --clean --view-top --resume --pipe-title Temp.txt'
+alias bbd='bbedit --clean --view-top --resume --pipe-title Diff.patch'
 
 # Git stuff
 alias g='git'
@@ -70,16 +70,16 @@ alias glu='git pull upstream'
 alias glnr='git pull --no-rebase'
 alias grm='git rebase origin/master'
 alias grum='git rebase upstream/master'
-alias glo='git log | bbedit --clean --view-top --pipe-title Log.txt'
+alias glo='git log | bbedit --clean --view-top --resume --pipe-title Log.txt'
 alias gmn='git merge --no-ff'
 alias gsl='git stash list'
 
 gde () {
-  git diff --patch-with-stat $1 | bbedit --clean --view-top --pipe-title Diff.patch
+  git diff --patch-with-stat $1 | bbedit --clean --view-top --resume --pipe-title Diff.patch
 }
 
 gdes () {
-  git diff --staged --patch-with-stat $1 | bbedit --clean --view-top --pipe-title Diff.patch
+  git diff --staged --patch-with-stat $1 | bbedit --clean --view-top --resume --pipe-title Diff.patch
 }
 
 gsa () {
