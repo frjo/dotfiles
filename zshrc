@@ -14,7 +14,8 @@ version_branch() {
     [[ -n $vcs_info_msg_0_ ]] && echo $vcs_info_msg_0_
 }
 
-prompts '[$(whoami)@local:$(COLLAPSED_DIR)$(virtualenv_info)]$(version_branch)$(prompt_char) ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+# $(whoami)@local:
+prompts '[${PWD/#$HOME/~}$(virtualenv_info)]$(version_branch)$(prompt_char) ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
 
 # History search
 HISTSIZE=50000
