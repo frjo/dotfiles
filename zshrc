@@ -15,7 +15,8 @@ version_branch() {
 }
 
 # $(whoami)@local:
-prompts '[${PWD/#$HOME/~}$(virtualenv_info)]$(version_branch)$(prompt_char) ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+#prompts '[${PWD/#$HOME/~}$(virtualenv_info)]$(version_branch)$(prompt_char) ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+prompts '[${PWD/#$HOME/~}]$(version_branch)$(prompt_char) ' ''
 
 # History search
 HISTSIZE=50000

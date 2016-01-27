@@ -6,6 +6,7 @@
 *.tmp
 *.patch
 *.orig
+*.rej
 *.sql
 *.gz
 *.tar
@@ -18,3 +19,4 @@ CVS
 .svn
 .sass-cache
 .drush-lock-update
+tags

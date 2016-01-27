@@ -6,14 +6,16 @@
 	excludesfile = ~/.gitignore
 	trustctime = false
 	whitespace = tab-in-indent,trailing-space
+	quotepath = false
 
 [alias]
 	br = branch
 	co = checkout
+	cob = checkout -b
 	ci = commit
-	cia = commit -a
+	cia = commit --all
 	cim = commit -m
-	cima = commit -am
+	cima = commit --all -m
 	ciam = commit --amend -m
 	st = status
 	cp = cherry-pick
@@ -28,6 +30,8 @@
 	hist4 = log --pretty=oneline -n 20 --graph
 	type = cat-file -t
 	dump = cat-file -p
+	ec = config --global --edit
+
 
 [color]
 	ui = auto

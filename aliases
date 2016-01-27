@@ -1,54 +1,5 @@
 # Shell aliases
 
-# Some good shorcuts
-alias .='pwd'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias cd..='cd ..'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias l='ls -lhaFG'
-alias ll='ls -lhaF | less'
-alias lt='ls -lhatFG'
-alias llt='ls -lhatF | less'
-alias c='clear'
-alias e='exit'
-
-# cd's to frontmost window of Finder
-cdf () {
-  cd "`osascript -e 'tell application "Finder"' -e 'set myname to POSIX path of (target of window 1 as alias)' -e 'end tell' 2>/dev/null`"
-}
-
-# Things to long to type/remember
-alias realias='bbedit --wait ~/.aliases; source ~/.aliases'
-alias tx='/usr/bin/tar -xvzf'
-alias ca='cd ~ ; clear'
-alias topl='top -u -F -R -s 2'
-alias o='open'
-alias o.='open .'
-
-# Quick way to rebuild the Launch Services database and get rid
-# of duplicates in the Open With submenu.
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-alias netstati='netstat -f inet | bbedit --clean --view-top --resume'
-alias netstatr='netstat -rn | bbedit --clean --view-top --resume'
-alias lsofi='lsof -nPi | bbedit --clean --view-top --resume'
-alias digl='dig @127.0.0.1'
-alias digx='dig -x'
-
-alias py='python'
-
-# BBEdit stuff
-alias edit='bbedit'
-alias bb.='bbedit .'
-alias bbp='bbedit --clean --view-top --resume --pipe-title Temp.txt'
-alias bbd='bbedit --clean --view-top --resume --pipe-title Diff.patch'
-
 # Git stuff
 alias g='git'
 alias gg='git grep -I --line-number --heading'
@@ -80,6 +31,10 @@ gde () {
 
 gdes () {
   git diff --staged --patch-with-stat $1 | bbedit --clean --view-top --resume --pipe-title Diff.patch
+}
+
+gro () {
+  git fetch origin && git reset origin/$1 --hard
 }
 
 gsa () {
@@ -130,3 +85,58 @@ alias grs17='git rebase origin/sprint-17'
 alias grs18='git rebase origin/sprint-18'
 alias grs19='git rebase origin/sprint-19'
 alias grs20='git rebase origin/sprint-20'
+
+# Some good shorcuts
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias cd..='cd ..'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias l='ls -lhaFG'
+alias ll='ls -lhaF | less'
+alias lt='ls -lhatFG'
+alias llt='ls -lhatF | less'
+alias lz='ls -lhaSFG'
+alias llz='ls -lhaSF | less'
+alias c='cd . && clear'
+alias e='exit'
+
+# cd's to frontmost window of Finder
+cdf () {
+  cd "`osascript -e 'tell application "Finder"' -e 'set myname to POSIX path of (target of window 1 as alias)' -e 'end tell' 2>/dev/null`"
+}
+
+# Things to long to type/remember
+alias realias='bbedit --wait ~/.aliases; source ~/.aliases'
+alias tx='/usr/bin/tar -xvzf'
+alias ca='cd ~ ; winname Terminal; clear'
+alias topl='top -u -F -R -s 2'
+alias o='open'
+alias o.='open .'
+alias netstati='netstat -f inet | bbedit --clean --view-top --resume'
+alias netstatr='netstat -rn | bbedit --clean --view-top --resume'
+alias lsofi='lsof -nPi | bbedit --clean --view-top --resume'
+alias digl='dig @127.0.0.1'
+alias digx='dig -x'
+
+# Disable zsh autocorrect on these commands.
+alias mv='nocorrect mv'
+
+# Quick way to rebuild the Launch Services database and get rid
+# of duplicates in the Open With submenu.
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+alias py='python'
+alias py3='/usr/local/bin/python3'
+
+# BBEdit stuff
+alias edit='bbedit'
+alias bb.='bbedit .'
+alias bbp='bbedit --clean --view-top --resume --pipe-title Temp.txt'
+alias bbd='bbedit --clean --view-top --resume --pipe-title Diff.patch'
+

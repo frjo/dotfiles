@@ -5,7 +5,7 @@
 set nocompatible
 
 " Switch syntax highlighting on
-syntax on
+syntax enable
 
 " Keymappings
 map! ^[OD ^[ha
@@ -15,8 +15,10 @@ map! ^[OC ^[la
 
 " Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces
 set expandtab                   " use spaces, not tabs
+set tabstop=2                   " a tab is two spaces
+set softtabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 " Searching
@@ -31,12 +33,23 @@ set showmatch
 " Start in paste mode by default (cancel with [ESC]:nopaste)
 set paste
 
-" always show line and col number and the current command
-set ruler
-set showcmd
+" show line numbers
+set number
+" and make them grey
+highlight LineNr ctermfg=DarkGrey
+
 
 " Toggle line numbers with double ctrl+N
 map <C-N><C-N> :set invnumber<CR>
+
+" highlight current line
+set cursorline
+
+" always show line and col number
+set ruler
+
+" show command in bottom bar
+set showcmd
 
 " Always show ^M in DOS files
 set fileformats=unix
@@ -99,6 +112,7 @@ if has("autocmd")
 
 else
 
-  set autoindent    " always set autoindenting on
+  " always set autoindenting on
+  set autoindent
 
 endif " has("autocmd")
