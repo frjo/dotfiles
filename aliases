@@ -21,9 +21,12 @@ alias glu='git pull upstream'
 alias glnr='git pull --no-rebase'
 alias grm='git rebase origin/master'
 alias grum='git rebase upstream/master'
-alias glo='git log | bbedit --clean --view-top --resume --pipe-title Log.txt'
+alias glo='git log --abbrev-commit | bbedit --clean --view-top --resume --pipe-title Log.txt'
+alias glom='git log --oneline --author=frjo | bbedit --clean --view-top --resume --pipe-title Log.txt'
 alias gmn='git merge --no-ff'
 alias gsl='git stash list'
+alias gdeb='git difftool --dir-diff'
+alias gdesb='git difftool --dir-diff --staged'
 
 gde () {
   git diff --patch-with-stat $1 | bbedit --clean --view-top --resume --pipe-title Diff.patch
@@ -96,7 +99,7 @@ alias ......='cd ../../../../..'
 alias cd..='cd ..'
 alias rm='rm -i'
 alias cp='cp -i'
-alias mv='mv -i'
+alias mv='nocorrect mv -i'
 alias l='ls -lhaFG'
 alias ll='ls -lhaF | less'
 alias lt='ls -lhatFG'
@@ -112,7 +115,7 @@ cdf () {
 }
 
 # Things to long to type/remember
-alias realias='bbedit --wait ~/.aliases; source ~/.aliases'
+alias realias='bbedit --wait --resume ~/.bash_aliases; source ~/.bash_aliases'
 alias tx='/usr/bin/tar -xvzf'
 alias ca='cd ~ ; winname Terminal; clear'
 alias topl='top -u -F -R -s 2'
@@ -123,9 +126,6 @@ alias netstatr='netstat -rn | bbedit --clean --view-top --resume'
 alias lsofi='lsof -nPi | bbedit --clean --view-top --resume'
 alias digl='dig @127.0.0.1'
 alias digx='dig -x'
-
-# Disable zsh autocorrect on these commands.
-alias mv='nocorrect mv'
 
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
