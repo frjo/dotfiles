@@ -1,0 +1,10 @@
+[[ -e $ZDOTDIR/base_setup.zsh ]] && source $ZDOTDIR/base_setup.zsh
+[[ -e $ZDOTDIR/functions.zsh ]] && source $ZDOTDIR/functions.zsh
+[[ -e $ZDOTDIR/completion.zsh ]] && source $ZDOTDIR/completion.zsh
+[[ -e $ZDOTDIR/correction.zsh ]] && source $ZDOTDIR/correction.zsh
+[[ -e $ZDOTDIR/version_control.zsh ]] && source $ZDOTDIR/version_control.zsh
+[[ -e $ZDOTDIR/history.zsh ]] && source $ZDOTDIR/history.zsh
+[[ -e $ZDOTDIR/apple_terminal.zsh ]] && source $ZDOTDIR/apple_terminal.zsh
+[[ -e $ZDOTDIR/misc.zsh ]] && source $ZDOTDIR/misc.zsh
+[[ -e $ZDOTDIR/prompt.zsh ]] && source $ZDOTDIR/prompt.zsh
+[[ -e $ZDOTDIR/local.zsh ]] && source $ZDOTDIR/local.zsh
