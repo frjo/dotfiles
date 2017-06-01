@@ -11,12 +11,16 @@
 *.gz
 *.tar
 *.zip
+*.css.map
 *~
 .#*
 [#]*#
 .DS_Store
 CVS
+.idea
 .svn
 .sass-cache
 .drush-lock-update
 tags
+node_modules
+nbproject

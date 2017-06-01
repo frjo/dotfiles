@@ -133,6 +133,7 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 
 alias py='python'
 alias py3='/usr/local/bin/python3'
+alias m='python manage.py'
 
 # BBEdit stuff
 alias edit='bbedit'

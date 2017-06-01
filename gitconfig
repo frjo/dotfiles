@@ -16,14 +16,18 @@
 	cia = commit --all
 	cim = commit -m
 	cima = commit --all -m
-	ciam = commit --amend -m
+	amend = commit --amend -m
 	st = status
 	cp = cherry-pick
 	w = whatchanged
 	df = diff --patch-with-stat
 	dfs = diff --staged --patch-with-stat
+	dtd = difftool --dir-diff
 	l = log
-	ll = log --oneline --decorate
+	ld = log --decorate
+	ll = log --oneline
+	lld = log --oneline --decorate
+	llg = log --oneline --graph
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	hist2 = log --pretty=oneline --abbrev-commit --branches=* --graph
 	hist3 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -32,12 +36,12 @@
 	dump = cat-file -p
 	ec = config --global --edit
 
-
 [color]
 	ui = auto
 	whitespace = red reverse
 
 [push]
 	default = upstream
+
 [branch]
 	autosetuprebase = always
