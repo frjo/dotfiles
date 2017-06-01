@@ -49,7 +49,7 @@ path() {
 }
 
 prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo '±' && return
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 && echo '±' && return
   bzr root >/dev/null 2>/dev/null && echo '↥' && return
   if [[ $USER == "root" ]]; then
     echo '#'

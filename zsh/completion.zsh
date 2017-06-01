@@ -3,6 +3,7 @@ setopt always_to_end
 setopt auto_menu
 setopt complete_in_word
 setopt no_menu_complete # do not autoselect the first completion entry
+setopt no_auto_remove_slash
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' # Like default, but without / -- ^W must be useful in paths, like it is in vim, bash, tcsh
 
