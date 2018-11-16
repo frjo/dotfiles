@@ -1,5 +1,11 @@
 # Shell aliases
 
+# Development
+alias py='/usr/local/bin/python3'
+alias m='python manage.py'
+alias stl='stellar'
+alias pg_restore='nocorrect pg_restore'
+
 # Git stuff
 alias g='git'
 alias gg='git grep -I --line-number --heading'
@@ -52,42 +58,12 @@ gra () {
   git remote add $2 git@github.com:$2/$1.git
 }
 
+# lazygit stuff
+alias lg='lazygit'
+
 # tig stuff
 alias t='tig'
 alias tst='tig status'
-
-# Git Drupal projects
-alias gr6='git rebase origin/6.x-1.x'
-alias gr62='git rebase origin/6.x-2.x'
-alias gr63='git rebase origin/6.x-3.x'
-alias gr7='git rebase origin/7.x-1.x'
-alias gr72='git rebase origin/7.x-2.x'
-alias gr73='git rebase origin/7.x-3.x'
-alias gr8='git rebase origin/8.x-1.x'
-alias gr82='git rebase origin/8.x-2.x'
-alias gr83='git rebase origin/8.x-3.x'
-
-# Git Sprint Rebase
-alias grs1='git rebase origin/sprint-1'
-alias grs2='git rebase origin/sprint-2'
-alias grs3='git rebase origin/sprint-3'
-alias grs4='git rebase origin/sprint-4'
-alias grs5='git rebase origin/sprint-5'
-alias grs6='git rebase origin/sprint-6'
-alias grs7='git rebase origin/sprint-7'
-alias grs8='git rebase origin/sprint-8'
-alias grs9='git rebase origin/sprint-9'
-alias grs10='git rebase origin/sprint-10'
-alias grs11='git rebase origin/sprint-11'
-alias grs12='git rebase origin/sprint-12'
-alias grs13='git rebase origin/sprint-13'
-alias grs14='git rebase origin/sprint-14'
-alias grs15='git rebase origin/sprint-15'
-alias grs16='git rebase origin/sprint-16'
-alias grs17='git rebase origin/sprint-17'
-alias grs18='git rebase origin/sprint-18'
-alias grs19='git rebase origin/sprint-19'
-alias grs20='git rebase origin/sprint-20'
 
 # Some good shorcuts
 alias .='pwd'
@@ -109,10 +85,22 @@ alias llz='ls -lhaSF | less'
 alias c='cd . && clear'
 alias e='exit'
 
+# cd shortcuts
+alias pd='pushd'
+alias bd='popd'
+alias cdd='cd ~/Downloads/'
+alias cdde='cd ~/Desktop/'
+
 # cd's to frontmost window of Finder
 cdf () {
   cd "`osascript -e 'tell application "Finder"' -e 'set myname to POSIX path of (target of window 1 as alias)' -e 'end tell' 2>/dev/null`"
 }
+
+# BBEdit stuff
+alias edit='bbedit'
+alias bb.='bbedit .'
+alias bbp='bbedit --clean --view-top --resume --pipe-title Temp.txt'
+alias bbd='bbedit --clean --view-top --resume --pipe-title Diff.patch'
 
 # Things to long to type/remember
 alias realias='bbedit --wait --resume ~/.bash_aliases; source ~/.bash_aliases'
@@ -126,18 +114,4 @@ alias netstatr='netstat -rn | bbedit --clean --view-top --resume'
 alias lsofi='lsof -nPi | bbedit --clean --view-top --resume'
 alias digl='dig @127.0.0.1'
 alias digx='dig -x'
-
-# Quick way to rebuild the Launch Services database and get rid
-# of duplicates in the Open With submenu.
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-alias py='python'
-alias py3='/usr/local/bin/python3'
-alias m='python manage.py'
-
-# BBEdit stuff
-alias edit='bbedit'
-alias bb.='bbedit .'
-alias bbp='bbedit --clean --view-top --resume --pipe-title Temp.txt'
-alias bbd='bbedit --clean --view-top --resume --pipe-title Diff.patch'
-
+alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
