@@ -1,7 +1,7 @@
 # History
 HISTFILE=$ZDOTDIR/.zsh_history
-HISTSIZE=55000
-SAVEHIST=50000
+HISTSIZE=75000
+SAVEHIST=70000
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
