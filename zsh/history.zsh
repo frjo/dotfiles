@@ -17,5 +17,10 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Bind up/down arrows to history search.
-bindkey '\e[A' up-line-or-beginning-search
-bindkey '\e[B' down-line-or-beginning-search
+if is_mac; then
+  bindkey '\e[A' up-line-or-beginning-search
+  bindkey '\e[B' down-line-or-beginning-search
+else
+  bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+  bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi

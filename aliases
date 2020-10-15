@@ -8,31 +8,30 @@ alias pg_restore='nocorrect pg_restore'
 
 # Git stuff
 alias g='git'
-alias gg='git grep -I --line-number --heading'
-alias ga='git add -u .'
+alias ga='git add --update .'
 alias gaa='git add --all .'
-alias gci='git commit -a -m'
-alias gcm='git commit -m'
-alias gcam='git commit --amend -m'
-alias gst='git status -sb'
-alias gcp='git cherry-pick'
 alias gbr='git branch'
-alias gbra='git branch -a'
+alias gbra='git branch --all'
+alias gcam='git commit --amend --message'
+alias gci='git commit --all --message'
+alias gcm='git commit --message'
+alias gcp='git cherry-pick'
+alias gdeb='git difftool --dir-diff'
+alias gdesb='git difftool --dir-diff --staged'
 alias gfo='git fetch origin'
 alias gfu='git fetch upstream'
-alias gp='git push'
-alias gpo='git push -u origin'
+alias gg='git grep -I --line-number --heading'
 alias gl='git pull'
-alias glu='git pull upstream'
 alias glnr='git pull --no-rebase'
-alias grm='git rebase origin/master'
-alias grum='git rebase upstream/master'
 alias glo='git log --abbrev-commit | bbedit --clean --view-top --resume --pipe-title Log.txt'
 alias glom='git log --oneline --author=frjo | bbedit --clean --view-top --resume --pipe-title Log.txt'
 alias gmn='git merge --no-ff'
+alias gp='git push'
+alias gpo='git push --set-upstream origin'
+alias grm='git rebase origin/master'
 alias gsl='git stash list'
-alias gdeb='git difftool --dir-diff'
-alias gdesb='git difftool --dir-diff --staged'
+alias gst='git status --short --branch'
+alias gswm='git switch master'
 
 gde () {
   git diff --patch-with-stat $1 | bbedit --clean --view-top --resume --pipe-title Diff.patch
@@ -56,6 +55,10 @@ gss () {
 
 gra () {
   git remote add $2 git@github.com:$2/$1.git
+}
+
+gsw () {
+ git switch $1 || git switch --create $1
 }
 
 # lazygit stuff

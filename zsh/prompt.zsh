@@ -5,4 +5,4 @@ precmd() {
 }
 
 PROMPT='[%32<…<%~%<<]${vcs_info_msg_0_}$(prompt_char) '
-SPROMPT="$fg[red]%R →$reset_color $fg[green]%r?$reset_color (Yes, No, Abort, Edit) "
+SPROMPT="%F{red}%R →%f %F{green}%r?%f (Yes, No, Abort, Edit) "
