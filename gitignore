@@ -11,13 +11,14 @@
 *.gz
 *.tar
 *.zip
-*.css.map
 *~
 .#*
 [#]*#
+.env
+.env_*
 .sass-cache
-tags
 node_modules
+_vendor
 
 ## Editors / IDE
 nbproject
@@ -27,6 +28,8 @@ nbproject
 *.sublime-workspace
 *.code-workspace
 *.bbprojectd
+.hugo_build.lock
+.zed
 
 ## Version control
 CVS

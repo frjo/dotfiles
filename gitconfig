@@ -8,35 +8,8 @@
 	whitespace = tab-in-indent,trailing-space
 	quotepath = false
 
-[alias]
-	br = branch
-	co = checkout
-	cob = checkout -b
-	cot = checkout -t
-	ci = commit
-	cia = commit --all
-	cim = commit -m
-	cima = commit --all -m
-	amend = commit --amend -m
-	amendno = commit --amend --no-edit
-	st = status
-	cp = cherry-pick
-	w = whatchanged
-	df = diff --patch-with-stat --color-moved
-	dfs = diff --staged --patch-with-stat --color-moved
-	dtd = difftool --dir-diff
-	l = log
-	ld = log --decorate
-	ll = log --oneline
-	lld = log --oneline --decorate
-	llg = log --oneline --graph
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	hist2 = log --pretty=oneline --abbrev-commit --branches=* --graph
-	hist3 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	hist4 = log --pretty=oneline -n 20 --graph
-	type = cat-file -t
-	dump = cat-file -p
-	ec = config --global --edit
+[init]
+	defaultBranch = main
 
 [color]
 	ui = auto
@@ -47,3 +20,39 @@
 
 [branch]
 	autosetuprebase = always
+
+[alias]
+	amend = commit --amend -m
+	amendno = commit --amend --no-edit
+	bla = blame -W -C
+	br = branch
+	ci = commit
+	cia = commit --all
+	cif = commit --fixup
+	cim = commit -m
+	cima = commit --all -m
+	co = checkout
+	cob = checkout -b
+	cot = checkout -t
+	cp = cherry-pick
+	df = diff --patch-with-stat --color-moved
+	dfs = diff --staged --patch-with-stat --color-moved
+	dfw = diff --patch-with-stat --color-moved --word-diff
+	dtd = difftool --dir-diff
+	dump = cat-file -p
+	ec = config --global --edit
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist2 = log --pretty=oneline --abbrev-commit --branches=* --graph
+	hist3 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	hist4 = log --pretty=oneline -n 20 --graph
+	l = log
+	ld = log --decorate
+	ll = log --oneline
+	lld = log --oneline --decorate
+	llg = log --oneline --graph
+	ri = rebase --interactive
+	re = restore
+	st = status
+	sw = switch
+	type = cat-file -t
+	w = whatchanged

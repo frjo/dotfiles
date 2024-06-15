@@ -24,5 +24,6 @@ zstyle ':completion:*' list-colors '' # Fallback to built in ls colors.
 zstyle ':completion:*:functions' ignored-patterns "_*"
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 zstyle ':completion:*:rm:*' ignore-line true
+zstyle ':completion:*:*:git*:*' ignored-patterns '*ORIG_HEAD'
 zstyle '*' single-ignored show
 #zstyle ':completion:*' group-name ''
